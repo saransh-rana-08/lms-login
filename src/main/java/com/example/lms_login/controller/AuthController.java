@@ -40,4 +40,15 @@ public class AuthController {
     public ResponseEntity<?> getAllUsers() {
         return ResponseEntity.ok(userService.getAllUsers());
     }
+
+    @GetMapping("/faculty")
+    public ResponseEntity<?> getFaculty() {
+        return ResponseEntity.ok(userService.getFacultyUsers());
+    }
+
+    @GetMapping("/students")
+    public ResponseEntity<?> getStudents() {
+        return ResponseEntity.ok(userService.getStudentUsers());
+    }
+
 }

@@ -44,6 +44,8 @@ public class SecurityConfig {
                                 "/api/auth/register",
                                 "/api/auth/me",
                                 "/api/auth/users",
+                                "/api/auth/faculty",
+                                "/api/auth/students",
                                 "/error"
                         ).permitAll()
                         .anyRequest().authenticated()
