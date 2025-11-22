@@ -43,6 +43,7 @@ public class SecurityConfig {
                                 "/api/auth/login",
                                 "/api/auth/register",
                                 "/api/auth/me",
+                                "/api/auth/users",
                                 "/error"
                         ).permitAll()
                         .anyRequest().authenticated()

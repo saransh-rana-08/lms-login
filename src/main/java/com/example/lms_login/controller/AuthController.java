@@ -35,4 +35,9 @@ public class AuthController {
         User user = userService.getUserByEmail(email);
         return ResponseEntity.ok(user);
     }
+
+    @GetMapping("/users")
+    public ResponseEntity<?> getAllUsers() {
+        return ResponseEntity.ok(userService.getAllUsers());
+    }
 }

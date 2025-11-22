@@ -8,6 +8,8 @@ import org.springframework.security.core.userdetails.*;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import java.util.List;
+
 
 import java.util.ArrayList;
 
@@ -46,6 +48,9 @@ public class UserService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("User not found"));
     }
 
+
+
+
     // For Spring Security
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
@@ -53,5 +58,8 @@ public class UserService implements UserDetailsService {
         return new org.springframework.security.core.userdetails.User(
                 user.getEmail(), user.getPassword(), new ArrayList<>()
         );
+    }
+    public List<User> getAllUsers() {
+        return userRepository.findAll();
     }
 }
