@@ -26,5 +26,5 @@ public class User {
     private String name;
 
     @Column(nullable = false)
-    private String role; // e.g. "STUDENT", "ADMIN"
+    private String role; // e.g. "STUDENT", "ADMIN", "FACULTY"
 }

@@ -71,4 +71,11 @@ public class UserService implements UserDetailsService {
         return userRepository.findByRole("STUDENT");
     }
 
+    public User getFacultyById(Long id) {
+        return userRepository.findById(id)
+                .filter(user -> user.getRole().equalsIgnoreCase("FACULTY"))
+                .orElseThrow(() -> new RuntimeException("Faculty not found with ID: " + id));
+    }
+
+
 }

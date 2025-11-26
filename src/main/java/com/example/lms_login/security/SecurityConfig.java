@@ -45,6 +45,7 @@ public class SecurityConfig {
                                 "/api/auth/me",
                                 "/api/auth/users",
                                 "/api/auth/faculty",
+                                "/api/auth/faculty/**",   // ✅ allow /faculty/{id}
                                 "/api/auth/students",
                                 "/error"
                         ).permitAll()
@@ -58,5 +59,4 @@ public class SecurityConfig {
 
         return http.build();
     }
-
 }

@@ -51,4 +51,10 @@ public class AuthController {
         return ResponseEntity.ok(userService.getStudentUsers());
     }
 
+    @GetMapping("/faculty/{id}")
+    public ResponseEntity<?> getFacultyById(@PathVariable Long id) {
+        return ResponseEntity.ok(userService.getFacultyById(id));
+    }
+
+
 }
